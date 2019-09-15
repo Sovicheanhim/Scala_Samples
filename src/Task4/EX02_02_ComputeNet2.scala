@@ -2,7 +2,7 @@ package Task4
 
 import scala.io.StdIn.readDouble
 
-object EX02__02_ComputeNet2 {
+object EX02_02_ComputeNet2 {
   def main(args: Array[String]): Unit = {
     println("Enter your hourly pay rate and hours worked respectively: ")
     val (payRate, hoursWorked) = (readDouble(), readDouble())
