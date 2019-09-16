@@ -8,7 +8,7 @@ object EX01_Pages {
     val pagesTurned = if (totalPages%2 == 0)
       Math.min(Math.ceil((totalPages - page)/2.0).toInt,Math.ceil((page - 1)/2.0).toInt)
     else
-      Math.min(Math.floor((totalPages - page)/2.0).toInt, Math.ceil((page - 1)/2.0).toInt)
+      Math.min((totalPages - page)/2, Math.ceil((page - 1)/2.0).toInt)
     println(s"The minimum pages needed is $pagesTurned")
   }
 }
