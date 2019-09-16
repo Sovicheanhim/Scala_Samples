@@ -13,11 +13,16 @@ object EX01_Kangaroo {
         kangaroo(0) += kangaroo(1)
         kangaroo(2) += kangaroo(3)
         jumps += 1
+//        println(kangaroo(0), kangaroo(2))
         if(kangaroo(0) == kangaroo(2)){
+          println(jumps)
+          println(kangaroo(0), kangaroo(2))
           println("YES")
           break
         }
-        else if(jumps < 0) {
+        else if(jumps < 0 || kangaroo(0) > 100000000 || kangaroo(2) > 100000000) {
+          println(kangaroo(0), kangaroo(2))
+          println(jumps)
           println("NO")
           break
         }
