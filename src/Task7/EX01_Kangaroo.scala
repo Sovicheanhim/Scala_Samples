@@ -1,5 +1,5 @@
 package Task7
-import scala.io.StdIn._g
+import scala.io.StdIn._
 
 object EX01_Kangaroo {
   def kangaroo():Unit = {
