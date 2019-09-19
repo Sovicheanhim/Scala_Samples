@@ -1,5 +1,6 @@
 package Task8
 import scala.io.StdIn._
+import scala.util.control.Breaks._
 
 object EX01_Angry_Professor {
   def main(args: Array[String]): Unit = {
@@ -9,8 +10,14 @@ object EX01_Angry_Professor {
       println(s"Enter case number $i :")
       val test = readLine().split(" ").map(_.toInt)
       val (students, cancellationThreshold) = (test(0), test(1))
-      val cases = readLine().split(" ").map(_.toInt).filter(_>=0)
-      if (cases.size < cancellationThreshold) println("YES") else println("NO")
+      var cases = readLine().split(" ")
+      breakable{
+        while (cases.size < students)  {
+          println(s"Please type the input of $students student/students :")
+          cases = readLine().split(" ")
+        }
+      }
+      if ((cases.map(_.toInt).filter(_>=0).size) < cancellationThreshold) println("YES") else println("NO")
     }
   }
 }
