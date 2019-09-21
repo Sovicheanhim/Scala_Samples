@@ -10,11 +10,11 @@ object EX01_Angry_Professor {
       val test = readLine().split(" ").map(_.toInt)
       val (students, cancellationThreshold) = (test(0), test(1))
       var cases = readLine().split(" ")
-      while (cases.size < students) {
+      while (cases.length < students) {
         println(s"Please type the input of $students student/students :")
         cases = readLine().split(" ")
       }
-      if ((cases.map(_.toInt).filter(_>=0).size) < cancellationThreshold) println("YES") else println("NO")
+      if (cases.map(_.toInt).count(_ <= 0) < cancellationThreshold) println("YES") else println("NO")
     }
   }
 }
